@@ -1,10 +1,12 @@
 #Germination Figures 3 and 4:
 #Read in Germ.Percent file
-germs = read.table(pipe("pbpaste"), header = T)
+germs = read.csv("Data/germ.csv")
 library(ggplot2)
 library(cowplot)
 library(multcomp)
-
+library(vegan)
+library(bbmle)
+library(MuMIn)
 
 u.germs = germs[germs$Species == "Uniola",]
 ip.germs = germs[germs$Species == "Ipomea",]
@@ -23,7 +25,8 @@ plot_grid(dog,cat,bat, ncol=3 ,labels = c('A', 'B', 'C'))
 
 #Figure 2
 #paste field data
-newdata.all = read.table(pipe("pbpaste"), header = T, sep = "\t")
+newdata.all=read.csv("Data/plot.csv")
+
 head(newdata.all)
 elevation = max(newdata.all$laser.ht) - newdata.all$laser.ht
 new.again = cbind(newdata.all,elevation)
@@ -31,7 +34,6 @@ new.again = cbind(newdata.all,elevation)
 head(new.again)
 newdata = new.again
 #newdata = newdata.all[,1:10]
-library(vegan)
 
 dim(newdata)
 head(newdata)
@@ -74,14 +76,13 @@ adonis(betad ~ distance*elevation, data=mds.data, perm=200)
 
 #Table II and III
 ###Analayzing germiantion data GLM
-germs1 = read.table(pipe("pbpaste"), header = T)
+germs1 = read.csv("Data/germ.csv")
 
 uniola = subset(germs1, Species=="Uniola")
 ipomea = subset(germs1, Species=="Ipomea")
 iva = subset(germs1, Species=="Iva")
 
-library(bbmle)
-library(MuMIn)
+
 
 #Ipomea
 dog1<-glm(ipomea$day.28~salinity*organic.matter, family=binomial(), data=ipomea)
