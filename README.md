@@ -14,13 +14,13 @@ Article Link: https://link.springer.com/article/10.1007%2Fs12237-019-00550-0
 
 ## Plant Species Disitbutions are stuctred by distance from the ocean and elevation
 
-Figure 1:
+#### Figure 1:
 ![](Figs/Figure1.png)
 
 ## Plant Species Germianition Traits Explain Species Distibutions
 
-Figure 2: 
+#### Figure 2: 
 ![](Figs/Figure2.png)
 
-Figure 3:
+### Figure 3:
 ![](Figs/Figure3.png)
