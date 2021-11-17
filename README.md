@@ -6,7 +6,7 @@ Author: Matthew D. Green and Thomas E. Miller
 
 Article Link: https://link.springer.com/article/10.1007%2Fs12237-019-00550-0
 
-## Photos of Study System
+## Photo of Sand Dune Ecosystem on St.George Island, FL
 
 ![](Figs/dune1.jpeg)
 
